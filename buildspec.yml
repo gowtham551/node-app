@@ -29,9 +29,9 @@ phases:
       - chmod +x ./kubectl
       - mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
       - echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
-      - kubectl version --short --client
+      - ./kubectl version --short --client
       - aws eks --region us-east-2 update-kubeconfig --name test
-      - kubectl get nodes
+      - ./kubectl get nodes
       
 artifacts:
     files: imagedefinitions.json
