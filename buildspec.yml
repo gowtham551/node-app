@@ -28,7 +28,7 @@ phases:
       - curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp	
       - mv /tmp/eksctl /usr/local/bin
       - eksctl version
-      - ssh -i "new_pait.pem" ec2-user@ec2-100-27-27-45.compute-1.amazonaws.com 'date'
+      - chmod +x script.sh && sh script.sh
       - eksctl create cluster -f eksctl.yml
 
       
