@@ -24,7 +24,9 @@ phases:
       - printf '[{"name":"nodeapp","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json 
   post_build:
-    commands: 
+    commands:
+      - curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp	
+      - mv /tmp/eksctl /usr/local/bin
       - eksctl version
 
       
