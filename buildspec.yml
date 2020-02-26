@@ -25,6 +25,18 @@ phases:
       - cat imagedefinitions.json 
   post_build:
     commands:
+      - sh cluster.sh  
+      - sed -i 's@CONTAINER_IMAGE@'"$REPOSITORY_URI:$IMAGE_TAG"'@' deployment.yml
+      - mkdir cluster
+      - cd cluster
+      - git clone https://github.com/vamsi-devops/node-app.git
+      - cd node-app
+      - kubectl apply -f deployment.yml
+      - kubectl expose deployment 
+      
+      
+      
+      
       - curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp	
       - mv /tmp/eksctl /usr/local/bin
       - eksctl version
