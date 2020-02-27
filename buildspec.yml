@@ -25,8 +25,7 @@ phases:
       - cat imagedefinitions.json 
   post_build:
     commands:
-      - aws eks create-cluster --name prod --role-arn arn:aws:iam::899488875890:role/EKS_MASTER_ROLE --resources-vpc-config subnetIds=subnet-e4952ea8,subnet-a2c389ca,subnet-8205ebf9
-      - eksctl create nodegroup --cluster=prod--name=prodNodeGroup --region ap-south-1
+      - aws eks create-cluster --name prod --role-arn arn:aws:iam::899488875890:role/EKS_MASTER_ROLE --resources-vpc-config subnetIds=subnet-e4952ea8,subnet-a2c389ca,subnet-8205ebf9 --debug
 artifacts:
     files: imagedefinitions.json
 
