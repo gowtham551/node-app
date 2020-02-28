@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: nginx-example
     spec:
       containers: 
-      - image: CONTAINER_IMAGE
+      - image: 899488875890.dkr.ecr.ap-south-1.amazonaws.com/oneecr
         name: nginx
         ports:
         - containerPort: 80
