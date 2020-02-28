@@ -15,17 +15,15 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
-      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
-      - echo Build completed on `date`
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG     
+  post_build:
+    commands:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"nodeapp","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json 
-  post_build:
-    commands:
-      - aws eks create-cluster --region ap-south-1a --name prod --role-arn arn:aws:iam::899488875890:role/EKS_MASTER_ROLE --resources-vpc-config subnetIds=subnet-e4952ea8,subnet-a2c389ca,subnet-8205ebf9 --debug
 artifacts:
     files: imagedefinitions.json
 
