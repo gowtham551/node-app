@@ -31,3 +31,5 @@ artifacts:
     - appspec.yml
     - scripts/*
     - index.html
+    - cluster_create.yml
+    - deployment.yml
