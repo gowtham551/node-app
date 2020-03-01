@@ -11,7 +11,7 @@ sudo mv /tmp/eksctl /usr/local/bin
 pwd
 ls -ltr
 eksctl create cluster -f cluster_create.yml
-aws eks  update-kubeconfig --region ap-northeast-1 --name basic-cluster
+aws eks  update-kubeconfig --region ca-central-1 --name basic-cluster
 #eksctl create cluster --region=ap-northeast-1 --name=cluster-1 
 #eksctl create nodegroup --cluster=cluster-1
 #pwd
