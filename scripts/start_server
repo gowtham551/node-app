@@ -8,4 +8,5 @@ kubectl version --short --client
 
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
-eksctl create cluster --region=ap-northeast-1
+eksctl create cluster -f cluster_create.yml
+aws eks  update-kubeconfig --region ap-northeast-1 --name basic-cluster
