@@ -7,6 +7,6 @@ hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
       timeout: 300
-  ApplicationStop:
+  AfterInstall:
     - location: scripts/start_server
       timeout: 3000
