@@ -14,3 +14,4 @@ ls -ltr
 #aws eks  update-kubeconfig --region ap-northeast-1 --name basic-cluster
 eksctl create cluster --region=ap-northeast-1 --name=cluster-1 
 eksctl create nodegroup --cluster=cluster-1
+pwd
