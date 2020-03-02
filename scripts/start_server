@@ -14,7 +14,7 @@ pwd
 touch mental.txt
 ls -ltr
 eksctl create cluster -f cluster_create.yml
-aws eks  update-kubeconfig --region ca-central-1 --name basic-cluster1
+aws eks  update-kubeconfig --region eu-west-2 --name basic-cluster1
 kubectl apply -f deploy.yml
 kubectl expose deployment hello-world --type=LoadBalancer --name=my-service
 #eksctl create cluster --region=ap-northeast-1 --name=cluster-1 
