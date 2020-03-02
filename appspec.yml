@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /cluster_create.yml
     destination: /
 hooks:
   BeforeInstall:
