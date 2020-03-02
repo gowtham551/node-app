@@ -11,6 +11,7 @@ sudo mv /tmp/eksctl /usr/local/bin
 pwd
 cd /
 pwd
+touch mental.txt
 ls -ltr
 eksctl create cluster -f cluster_create.yml
 aws eks  update-kubeconfig --region ca-central-1 --name basic-cluster1
